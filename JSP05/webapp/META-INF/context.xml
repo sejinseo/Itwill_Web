@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<!-- 웹 서버가 시작 될 때 미리 생성할 객체들을 정의 -->
+	<Resource name="jdbc/myoracle" auth="Container"
+              type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver"
+              url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+              username="scott" password="tiger" 
+              maxTotal="20"  maxIdle="10"		
+              maxWaitMillis="1000"/>
+              <!-- type의 Datasource 는 Connection Pool을 뜻한다. -->
+              <!-- maxTotal: Connection 최대 개수 -->
+              <!-- maxIdle: 대기중인 Connection 최대 개수 : 최대 개수 - 사용 중 개수 -->
+              <!-- DB자체적으로 connection 개수 제한이 있어서 숫자를 늘린다고 되는건 아니다 -->	
+</Context>
